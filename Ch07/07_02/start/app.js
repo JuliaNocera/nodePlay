@@ -1,4 +1,10 @@
-var http = require("http")
+/* jshint esnext: true */
+// running node with node-dev and jshint
+// to use template string in jshint --> simply type line 1 in a comment at the top of a file
+
+
+var http = require("http");
+
 
 http.createServer(function(req, res) {
 
@@ -9,10 +15,10 @@ http.createServer(function(req, res) {
          <title>Web Server</title>
        </head>
        <body>
-         <h1>Hello World</h1>
+         <h1>Hello World et ALL</h1>
      </html> 
    `);
 
-}).listen(3000)
+}).listen(3000);
 
-console.log("Web Server running at http://localhost:3000");
+console.log("Server running at http://localhost:3000");
