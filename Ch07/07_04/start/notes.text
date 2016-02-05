@@ -1,0 +1,6 @@
+httpster -p 3000 -d ./public --> serves files from terminal
+
+if you have it only locally you need to use :
+./node_modules/httpster/bin/httpster -p 3000 -d ./public
+
+these methods will serve all the files in public folder 
