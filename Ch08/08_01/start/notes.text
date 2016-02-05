@@ -1,0 +1,9 @@
+type  "npm init"  in the terminal and it will take you through a set up of a package.json file
+which makes it easy to get package.json set up
+
+command line install : 
+	exs:
+		npm install express --save // --save inserts it in your package.json
+		npm install cors --save   // this is used for cross browser handling
+		npm install body-parser --save  // this is used for parsing json
+
