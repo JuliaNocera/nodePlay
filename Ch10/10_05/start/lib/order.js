@@ -19,7 +19,9 @@ function isInStock(sku, qty) {
 function order(sku, quantity, complete) {
     complete = complete || function () {};
     if (isInStock(sku, quantity)) {
-        console.log(`ordering ${quantity} of item # ${sku}`);
+        console.log(`ordering ${quantity} of item # ${sku}`);  // invokes console.log 
+        // (we will use Spy for these logs to not use real console
+        // so we inject our fake console into this file useing "rewire")
         warehouse.packageAndShip(sku, quantity, function (tracking) {
             console.log(`order shipped, tracking - ${tracking}`);
             complete(tracking);

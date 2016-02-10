@@ -1,0 +1,15 @@
+Unit Testing 
+
+Testing Frameworks for testing such as Jasmine or Mocha 
+
+We will use Mocha (npm install - g mocha to install globally)
+
+run 'mocha' in terminal -- it looks for a test directory
+
+TDD - Test Driven Development 
+write the test first, watch it fail, and then make our code pass
+
+we can use Chai  : npm install chai -- save-dev    under dev dependencies 
+Chai will check our assertion values 
+
+Sometimes a function is async and needs more time for task to complete - we can write a function that loads a webpage in Mocha  (ex in tools-spec.js)

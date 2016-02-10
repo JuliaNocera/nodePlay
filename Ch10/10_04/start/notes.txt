@@ -1,0 +1,8 @@
+servers aren't the only dependencies that are mockable 
+
+any dependency can be mocked 
+	
+when we test module or (f) that is under test as SUT (System Under Test) others below that are called
+collaborators (some of these might be under development so we have to mock -- we want to test with mock data so we don't accidently rewrite our real data)
+
+

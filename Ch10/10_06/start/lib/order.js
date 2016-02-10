@@ -1,3 +1,4 @@
+// this is the module we are texting 
 var inventoryData = require('../data/inventory');
 var warehouse = require('./warehouse');
 
@@ -18,7 +19,8 @@ function isInStock(sku, qty) {
 
 function order(sku, quantity, complete) {
     complete = complete || function () {};
-    if (isInStock(sku, quantity)) {
+    // send an order to the warehouse -- of course we do not want to actually package and shop items and it will take some time so there is a double benefit with using mocks and stubbs
+    if (isInStock(sku, quantity)) { 
         console.log(`ordering ${quantity} of item # ${sku}`);
         warehouse.packageAndShip(sku, quantity, function (tracking) {
             console.log(`order shipped, tracking - ${tracking}`);

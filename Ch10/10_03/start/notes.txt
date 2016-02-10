@@ -1,0 +1,8 @@
+creatin Mocks so we don't actually load wikipedia 
+
+node package called ****nock**** to create mock web server so we hit a fake or mock webserver
+
+when we test loadWiki() we can use Mocha's concept called "Hooks" added before or beforeeach and after or aftereach
+
+Before: before who test suite
+beforeeach: before each test

@@ -1,0 +1,9 @@
+Sinon.js is an open source module that helps us use mock objects for our tests
+
+This lesson : Sinon Spies next Sinon Stubbs
+
+Spies record details about how they are called, what args they're called with and what is the state of the this object in the (f)
+
+check to be sure a specific function was invoked
+
+our console.logs are making our tests look funny so we will use a Sinon spy for console.log to make sure it was properly called but without having to actually log anything

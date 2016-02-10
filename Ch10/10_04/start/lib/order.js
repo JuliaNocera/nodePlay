@@ -1,4 +1,6 @@
-var inventoryData = require('../data-sample/inventory');
+// this is our S.U.T.
+
+var inventoryData = require('../data/inventory');
 var warehouse = require('./warehouse');
 
 function findItem(sku) {
@@ -16,7 +18,7 @@ function isInStock(sku, qty) {
     return item && item.qty >= qty;
 }
 
-function order(sku, quantity, complete) {
+function order(sku, quantity, complete) {  // main (f) we want to test 
     complete = complete || function () {};
     if (isInStock(sku, quantity)) {
         console.log(`ordering ${quantity} of item # ${sku}`);
@@ -31,4 +33,4 @@ function order(sku, quantity, complete) {
     }
 }
 
-module.exports.orderItem = order;
+module.exports.orderItem = order; // module.exports give us access to this file as if it were a module
