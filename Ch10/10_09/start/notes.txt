@@ -1,0 +1,2 @@
+CHEERIO helps you check data on an http call
+we will check the data that is returned now instead of just that the functions are called 

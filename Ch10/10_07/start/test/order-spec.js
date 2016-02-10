@@ -29,9 +29,9 @@ describe("Ordering Items", function() {
 
 	});
 
-	it("Logs 'item not found'", function() {
-		order.orderItem("ZZZ", 10);
-		expect(this.console.log.calledWith("Item - ZZZ not found")).to.equal(true);
+	it("Logs 'item not found'", function() { // tests for ordering an item that is not in our inventory
+		order.orderItem("ZZZ", 10); // try to order item we don't have
+		expect(this.console.log.calledWith("Item - ZZZ not found")).to.equal(true); // check the console.log was called with correct message
 	});
 
 	it("order an item when there are enough in stock", function(done) {

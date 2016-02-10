@@ -1,3 +1,5 @@
+// looking deeper in test values 
+var cheerio = require("cheerio");
 var request = require("supertest");
 var expect = require('chai').expect;
 var rewire = require('rewire');
@@ -6,7 +8,13 @@ var app = rewire('../app');
 describe("Dictionary App", function () {
 
     it("Loads the home page", function(done) {
-        request(app).get("/").expect(200).end(done);
+        request(app).get("/").expect(200).end(function(err, res) {
+          // in this case the response text is HTML -- we can use Cheerio module to search the DOM like we can with jquery
+          var $ = cheerio.load(res.text);
+          var pageHeading = $("body>h1:first-child").text();
+          expect(pageHeading).to.equal("Skier Dictionary");
+          done();
+        });
     });
 
     describe("Dictionary API", function () {
@@ -28,7 +36,12 @@ describe("Dictionary App", function () {
         });
 
         it("GETS dictionary-api", function(done) {
-            request(app).get("/dictionary-api").expect(200).end(done);
+            var defs = this.defs; // so that the definitions to get lost in the callback (f)
+            request(app).get("/dictionary-api").expect(200).end(function(err, res) {
+              var terms = JSON.parse(res.text);
+              expect(terms).to.deep.equal(defs); // now we are checking the data 
+              done(); // tell mocha test is finished
+            });
         });
 
         it("POSTS dictionary-api", function(done) {

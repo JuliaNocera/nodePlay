@@ -1,0 +1,9 @@
+Istanbul -- code coverage report -- tells us how many lines of code we are actually testing
+
+to generate type : 
+	istanbul cover _mocha      in terminal
+
+	 this runs tests and shows results as well as statments, branches, functions, and lines 
+	 once generated we will see a coverage folder --> lcov-report --> index.html which gives you your code coverage support (it will show you where your tests are and the coverage)
+
+	 Explore the index.html file to get more info on what you are and aren't testing in a given folder and file 

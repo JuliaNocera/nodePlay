@@ -1,0 +1,4 @@
+*supertest* is a great module for testing http applications such as Express
+
+we want to test that we are seeing the home page but also that the api data is working
+and we can post and delete to the api

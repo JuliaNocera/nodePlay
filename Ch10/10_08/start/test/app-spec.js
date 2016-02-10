@@ -1,10 +1,14 @@
+// testing Express and http methods
+var request = require("supertest"); // this is a function to make requests on http
 var expect = require('chai').expect;
 var rewire = require('rewire');
-var app = rewire('../app');
+var app = rewire('../app'); // exported on module.exports in app.js file at bottom
 
 describe("Dictionary App", function () {
 
-    it("Loads the home page");
+    it("Loads the home page", function(done) {
+        request(app).get("/").expect(200).end(done); // .end() takes in callback function to invoke when test is finished
+    });
 
     describe("Dictionary API", function () {
 
@@ -21,14 +25,27 @@ describe("Dictionary App", function () {
                 }
             ];
 
-            app.__set__("skierTerms", this.defs);
+            app.__set__("skierTerms", this.defs); // replace with our fake data so we know what terms and how many we should see
         });
 
-        it("GETS dictionary-api");
+        it("GETS dictionary-api", function(done) {
+            request(app).get("/dictionary-api").expect(200).end(done);
+        });
 
-        it("POSTS dictionary-api");
+        it("POSTS dictionary-api", function(done) {
+            request(app)
+                .post("/dictionary-api")
+                .send({"term": "Three", "defined": "Term Three Defined"})
+                .expect(200)
+                .end(done);
+        });
 
-        it("DELETES dictionary-api");
+        it("DELETES dictionary-api", function(done) {
+            request(app)
+                .delete("/dictionary-api/One") // term One is defined in our fake data
+                .expect(200)
+                .end(done);
+        });
 
     });
 

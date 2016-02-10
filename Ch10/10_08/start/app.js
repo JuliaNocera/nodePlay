@@ -50,4 +50,4 @@ app.listen(3000);
 
 console.log("Express app running on port 3000");
 
-module.exports = app;
+module.exports = app; // we export this to use express app in supertest module
