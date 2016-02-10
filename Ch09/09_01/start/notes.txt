@@ -1,0 +1,9 @@
+Web sockets : 
+
+true 2-way connection between client and server - they use their own TCP server
+
+Polling : when the browser make a GET request to the server to see if info has changed 
+Long Polling : leave GET req open and timeout if nothing changes (more efficient polling)
+Web Sockets: client can connect to server and leave a two way server - client sends data that is broadcasted to any open client
+	They use their own protocol so it sucks to set from scratch -- YAY node modules! we don't need to
+	 

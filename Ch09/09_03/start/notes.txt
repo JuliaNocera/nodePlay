@@ -1,0 +1,6 @@
+caniuse.com shows web socket specs for older browser 
+
+we can use a module called socket.io which lets us build sockets with its own js server
+	it will fall back to long polling if web sockets aren't supported 
+
+	when we send a message it emits a chat event and sends to all sockets 

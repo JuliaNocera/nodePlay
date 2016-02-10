@@ -6,4 +6,9 @@ command line install :
 		npm install express --save // --save inserts it in your package.json
 		npm install cors --save   // this is used for cross browser handling
 		npm install body-parser --save  // this is used for parsing json
+		npm install underscore --save
 
+to remove dependencies : 
+	ex: 
+		npm remove underscore --save  // this will update our package.json and npm modules
+		
